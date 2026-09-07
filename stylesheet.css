@@ -1,0 +1,427 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #010204;
+    color: #e4e8e9;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+}
+
+.escena {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 80px 20px;
+
+    overflow: hidden;
+
+    background: #020509;
+}
+
+.escena::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.1),
+            rgba(0,0,0,0.75)
+        );
+
+    pointer-events: none;
+}
+
+.contenido {
+    position: relative;
+    z-index: 2;
+
+    width: min(760px, 90%);
+
+    text-align: center;
+}
+
+
+/* =========================
+   TIPOGRAFÍA
+========================= */
+
+h1,
+h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: clamp(70px, 12vw, 150px);
+    line-height: 0.8;
+}
+
+h2 {
+    font-size: clamp(48px, 7vw, 80px);
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #c3ccd0;
+
+    margin: 18px 0;
+}
+
+.fecha,
+.capitulo {
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: #89979f;
+}
+
+.subtitulo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    letter-spacing: 3px;
+}
+
+.destacado {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    color: #e5e9ea;
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+.boton,
+.opcion {
+
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 14px 28px;
+
+    border: 1px solid rgba(190, 200, 205, 0.5);
+
+    color: #e5e8e9;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    transition: 0.4s ease;
+}
+
+.boton:hover,
+.opcion:hover {
+
+    background: rgba(220, 225, 228, 0.12);
+
+    border-color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   PORTADA
+========================= */
+
+.portada {
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            rgba(40, 62, 78, 0.4),
+            #020408 72%
+        );
+}
+
+
+/* =========================
+   DECISIÓN
+========================= */
+
+.decision {
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            rgba(50, 65, 73, 0.25),
+            #020406 75%
+        );
+}
+
+.eleccion {
+    margin-top: 60px;
+}
+
+.eleccion span {
+
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 29px;
+}
+
+.opcion {
+    margin: 8px;
+}
+
+
+/* =========================
+   REMOLINO
+========================= */
+
+.remolino {
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            rgba(12, 70, 91, 0.45),
+            rgba(1, 15, 23, 0.95) 55%,
+            #010306 90%
+        );
+}
+
+.remolino .efecto {
+
+    animation: giro 5s infinite ease-in-out;
+
+}
+
+@keyframes giro {
+
+    0% {
+        transform: rotate(0deg);
+        letter-spacing: 5px;
+    }
+
+    50% {
+        transform: rotate(2deg);
+        letter-spacing: 12px;
+    }
+
+    100% {
+        transform: rotate(0deg);
+        letter-spacing: 5px;
+    }
+
+}
+
+
+/* =========================
+   CAPITÁN
+========================= */
+
+.capitan {
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            rgba(75, 12, 15, 0.35),
+            rgba(15, 4, 6, 0.95) 55%,
+            #010203 90%
+        );
+}
+
+.capitan .efecto {
+
+    color: #c1a0a0;
+}
+
+
+/* =========================
+   CARGAMENTO
+========================= */
+
+.cargamento {
+
+    background:
+
+        radial-gradient(
+            ellipse at bottom,
+            rgba(76, 62, 31, 0.32),
+            rgba(17, 14, 9, 0.96) 60%,
+            #020202 90%
+        );
+}
+
+.cargamento .efecto {
+
+    color: #b5a17a;
+
+}
+
+
+/* =========================
+   EFECTOS
+========================= */
+
+.efecto {
+
+    margin: 50px 0;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 35px;
+
+    letter-spacing: 8px;
+
+    color: #d5dcdf;
+
+    transition: 0.5s;
+}
+
+
+/* =========================
+   CONVERGENCIA
+========================= */
+
+.agua {
+
+    background:
+
+        radial-gradient(
+            ellipse at bottom,
+            rgba(24, 48, 62, 0.35),
+            #020509 60%,
+            #000102 100%
+        );
+
+    animation: oscurecer 8s infinite ease-in-out;
+}
+
+.silencio {
+
+    margin: 55px 0;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 35px;
+
+    letter-spacing: 10px;
+
+    color: #d9e0e3;
+}
+
+@keyframes oscurecer {
+
+    0% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(0.7);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final {
+
+    background:
+
+        radial-gradient(
+            ellipse at bottom,
+            rgba(17, 38, 51, 0.35),
+            #010204 65%
+        );
+}
+
+.final-texto {
+
+    margin: 50px 0;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(45px, 8vw, 85px);
+
+    line-height: 0.9;
+
+    letter-spacing: 6px;
+
+    color: #e1e6e8;
+
+    animation: desaparecer 7s infinite ease-in-out;
+}
+
+@keyframes desaparecer {
+
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 0.35;
+        transform: translateY(12px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .escena {
+        padding: 60px 15px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .opcion {
+        display: block;
+        width: 90%;
+        margin: 10px auto;
+    }
+
+}
